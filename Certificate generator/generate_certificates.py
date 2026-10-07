@@ -139,8 +139,8 @@ def build_parser():
 
     # PARTICIPANT NAME PARAMETERS
     parser.add_argument("--x-pct", type=float, default=0.500, help="Horizontal position fraction (0.500 = center)")
-    parser.add_argument("--y-pct", type=float, default=0.5095, help="Vertical position fraction (name centered between pill and first dotted line)")
-    parser.add_argument("--font-size-px", type=int, default=60, help="Starting font size in pixels (default: 60px)")
+    parser.add_argument("--y-pct", type=float, default=0.5104, help="Vertical position fraction (name centered between pill and first dotted line)")
+    parser.add_argument("--font-size-px", type=int, default=59, help="Starting font size in pixels (default: 59px)")
     parser.add_argument("--min-font-size-px", type=int, default=30, help="Minimum font size in pixels when scaling (default: 30px)")
     parser.add_argument("--max-width-pct", type=float, default=0.75, help="Maximum width allowed fraction before auto-shrinking (default: 0.75)")
     parser.add_argument("--color", default="#1a1a1a", help="Text color in hex format (default: #1a1a1a)")
