@@ -139,8 +139,8 @@ def build_parser():
 
     # PARTICIPANT NAME PARAMETERS
     parser.add_argument("--x-pct", type=float, default=0.500, help="Horizontal position fraction (0.500 = center)")
-    parser.add_argument("--y-pct", type=float, default=0.520, help="Vertical position fraction (0.520 = 52% from top)")
-    parser.add_argument("--font-size-px", type=int, default=84, help="Starting font size in pixels (default: 84px)")
+    parser.add_argument("--y-pct", type=float, default=0.5095, help="Vertical position fraction (name centered between pill and first dotted line)")
+    parser.add_argument("--font-size-px", type=int, default=60, help="Starting font size in pixels (default: 60px)")
     parser.add_argument("--min-font-size-px", type=int, default=30, help="Minimum font size in pixels when scaling (default: 30px)")
     parser.add_argument("--max-width-pct", type=float, default=0.75, help="Maximum width allowed fraction before auto-shrinking (default: 0.75)")
     parser.add_argument("--color", default="#1a1a1a", help="Text color in hex format (default: #1a1a1a)")
@@ -150,9 +150,9 @@ def build_parser():
     parser.add_argument("--name-y", type=int, default=None, help="Absolute Y position override in px")
 
     # Other field positions
-    parser.add_argument("--college-y-pct", type=float, default=0.600, help="College vertical position fraction")
+    parser.add_argument("--college-y-pct", type=float, default=0.5711, help="College vertical position fraction (college centered between the two dotted lines)")
     parser.add_argument("--event-y-pct", type=float, default=0.660, help="Event vertical position fraction")
-    parser.add_argument("--other-size", type=int, default=45, help="Font size for college/event")
+    parser.add_argument("--other-size", type=int, default=38, help="Font size for college/event")
 
     return parser
 
@@ -205,7 +205,7 @@ def main():
 
     # Calculate absolute positions from parameters
     center_x = args.name_x if args.name_x is not None else int(image_width * args.x_pct)
-    center_y = args.name_y if args.name_y is not None else int(image_height * args.y_pct) - 140
+    center_y = args.name_y if args.name_y is not None else int(image_height * args.y_pct)
     max_allowed_width = image_width * args.max_width_pct
 
     other_font = load_font(args.font, args.other_size, bold=False)
